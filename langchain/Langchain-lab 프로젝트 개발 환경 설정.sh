@@ -1,4 +1,3 @@
-```bash
 cd ~/environment
 # 홈 디렉토리의 'environment' 폴더로 이동합니다.
 # AWS Cloud9이나 일부 개발환경에서 자주 사용되는 작업 디렉토리입니다.
@@ -19,4 +18,3 @@ pip3 install --upgrade --quiet boto3 langchain_aws langchain langchain-community
 #   - langchain            : 다양한 LLM(대형 언어모델)과 프롬프트 체인 등을 쉽게 구축할 수 있는 오픈소스 프레임워크
 #   - langchain-community  : LangChain 관련 커뮤니티 확장 패키지
 #   - pymupdf              : PDF 및 전자문서 처리용 라이브러리 (문서 읽기/분석 등에 활용)
-```
