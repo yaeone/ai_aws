@@ -2,13 +2,13 @@ import json  # 파이썬에서 JSON 데이터(문자열 ↔ 딕셔너리) 변환
 import boto3 # AWS(아마존 웹 서비스)를 파이썬에서 제어할 수 있게 해주는 공식 라이브러리
 
 # 1. AWS와 연결할 세션(Session) 객체를 생성합니다.
-#    - 세션은 AWS 서비스와 통신하는 기본 연결通路를 만들어 줍니다.
+#    - 세션은 AWS 서비스와 통신하는 기본 연결을 만들어 줍니다.
 #    - AWS 인증 정보(액세스키 등)를 내부적으로 사용합니다.
 session = boto3.Session()
 
 # 2. Bedrock 서비스용 클라이언트 객체를 생성합니다.
 #    - session.client() 함수는 특정 AWS 서비스에 접근하기 위한 클라이언트(통신 객체)를 만듭니다.
-#    - 여기서 'bedrock-runtime'은 생성형 AI(Generative AI) 서비스를 제공하는 Bedrock의 실시간 API입니다.
+#    - 여기서 'bedrock-runtime'은 생성형 AI 서비스를 제공하는 Bedrock의 실시간 API입니다.
 bedrock = session.client(service_name='bedrock-runtime')
 
 # 3. 사용할 AI 언어모델의 ID(고유명)를 지정합니다.
