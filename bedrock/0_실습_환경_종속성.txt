@@ -1,0 +1,16 @@
+faiss-cpu                      # Facebook AI에서 만든 벡터 유사도 검색 라이브러리(CPU 버전). 대용량 임베딩 데이터에서 유사한 벡터를 빠르게 검색할 때 사용.
+transformers                   # Hugging Face의 사전학습 언어모델(LLM) 로딩 및 파인튜닝/추론을 지원하는 대표적인 AI 라이브러리.
+Pillow                         # 이미지 파일의 읽기/저장/편집 등 이미지 처리 전반을 담당하는 라이브러리(PIL의 공식 유지 버전).
+pypdf                          # PDF 파일을 파싱, 병합, 분할, 페이지 추출 등 다양한 작업을 지원하는 라이브러리.
+jq                             # 파이썬에서 JSON 데이터를 jq 스타일로 필터링/변환할 수 있게 해주는 라이브러리.
+anthropic                      # Anthropic(Claude 등 대형 언어모델 제공)의 API 클라이언트. Claude LLM을 API로 연동할 때 사용.
+chroma-hnswlib==0.7.5          # Chroma 벡터DB에서 사용하는 HNSW(Hierarchical Navigable Small World) 기반 고속 벡터 검색 라이브러리(지정 버전 사용).
+chromadb==0.5.4                # Chroma 벡터 데이터베이스. 임베딩 데이터 저장/검색/관리 등 고속 벡터 DB 기능 제공. (지정 버전)
+langchain-core==0.1.40         # LangChain의 코어 기능 패키지. LLM 앱 및 RAG(검색증강생성) 시스템 구현 시 필수 기반 모듈.
+langchain-text-splitters==0.0.1# LangChain에서 긴 문서를 LLM 처리에 적합하게 쪼개주는(분할) 기능을 담당하는 모듈.
+langchain-community==0.0.31    # LangChain의 다양한 외부 서비스 및 데이터소스 연동 커뮤니티 패키지.
+langchain==0.1.13              # LangChain 프레임워크의 메인 패키지. 생성형 AI/LLM 챗봇, 문서검색 등 다양한 AI 앱 개발에 활용.
+streamlit                      # 파이썬 데이터/AI 프로젝트를 손쉽게 웹앱 대시보드로 구현할 수 있게 해주는 인기 프레임워크.
+botocore                       # AWS Python SDK의 핵심 엔진. boto3 등 AWS API 요청의 기반이 되는 필수 라이브러리.
+boto3                          # AWS 공식 Python SDK. S3, DynamoDB, SageMaker 등 모든 AWS 서비스를 파이썬 코드로 제어 가능.
+awscli                         # AWS 공식 CLI(Command Line Interface) 툴. 명령어로 AWS 리소스를 직접 관리(배포, 설정 등)할 수 있으며, boto3와 함께 자주 사용됨.
