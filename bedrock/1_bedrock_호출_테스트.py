@@ -1,6 +1,8 @@
+## AWS boto3 라이브러리를 사용하여 Amazon Bedrock을 호출
 import json  # 파이썬에서 JSON 데이터(문자열 ↔ 딕셔너리) 변환을 도와주는 표준 라이브러리
 import boto3 # AWS(아마존 웹 서비스)를 파이썬에서 제어할 수 있게 해주는 공식 라이브러리
 
+## Bedrock client 라이브러리 초기화, Bedrock client 생성
 # 1. AWS와 연결할 세션(Session) 객체를 생성합니다.
 #    - 세션은 AWS 서비스와 통신하는 기본 연결을 만들어 줍니다.
 #    - AWS 인증 정보(액세스키 등)를 내부적으로 사용합니다.
@@ -11,6 +13,7 @@ session = boto3.Session()
 #    - 여기서 'bedrock-runtime'은 생성형 AI 서비스를 제공하는 Bedrock의 실시간 API입니다.
 bedrock = session.client(service_name='bedrock-runtime')
 
+## API 호출을 위한 payload 생성 (사용할 모델, 프롬프트 및 지정된 모델에 대한 추론 매개 변수를 식별)
 # 3. 사용할 AI 언어모델의 ID(고유명)를 지정합니다.
 #    - 'amazon.titan-text-express-v1'은 Amazon에서 제공하는 텍스트 생성 모델입니다.
 bedrock_model_id = "amazon.titan-text-express-v1"
@@ -37,6 +40,7 @@ body = json.dumps({
     }
 })
 
+## Bedrock API 호출 (호출을 위해 Bedrock의 invoke_model 함수를 사용)
 # 6. Bedrock 서비스에 위에서 만든 입력값(body)을 보냅니다.
 #    - bedrock.invoke_model() 함수는
 #      (1) 입력 데이터(body)와
@@ -51,6 +55,7 @@ response = bedrock.invoke_model(
     contentType='application/json'
 )
 
+## 응답 표시 (모델의 응답 JSON에서 반환된 텍스트를 추출하여 프린트)
 # 7. 응답(response) 객체에서 실제 생성된 텍스트 데이터를 읽어옵니다.
 #    - response.get('body')로 응답 본문(Body)을 가져옴
 #    - .read()로 바이트 데이터를 읽어서
