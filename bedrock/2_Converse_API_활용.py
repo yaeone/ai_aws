@@ -12,6 +12,9 @@ session = boto3.Session()  # boto3 세션 생성 (AWS 인증 정보 및 리전 �
 bedrock = session.client(service_name='bedrock-runtime')  # Bedrock Runtime 클라이언트 객체 생성
 
 message_list = []  # 대화 내역(메시지 목록) 저장용 리스트 생성
+## 앞선 실습과 달리 messages에 array를 전달
+## 일반적인 LLM은 contextless하게 개발되어 서비스에서 사용자의 관리 책임으로 관리
+## 따라서 dynamoDB 등으로 진행된 context에 대한 관리 필요
 
 # 첫 사용자 메시지(프롬프트) 구성
 initial_message = {
