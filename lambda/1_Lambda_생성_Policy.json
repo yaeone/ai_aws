@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17", // 정책 버전
+  "Statement": [{
+    // 이 정책이 허용(Allow)인지 거부(Deny)인지 지정합니다.
+    "Effect": "Allow",
+
+    // 이 정책의 적용 대상을 지정합니다.
+    // "*"는 모든 사용자(익명 포함)에게 허용함을 의미합니다.
+    "Principal": "*",
+
+    // 허용할 액션(동작)을 지정합니다.
+    // lambda:InvokeFunctionUrl은 Lambda 함수 URL을 호출하는 권한입니다.
+    "Action": "lambda:InvokeFunctionUrl",
+
+    // 정책이 적용될 Lambda 함수의 ARN(Amazon Resource Name)을 지정합니다.
+    // 실제 함수 ARN으로 교체해야 합니다.
+    "Resource": "함수 ARN",
+
+    // 추가 조건을 지정합니다.
+    // lambda:FunctionUrlAuthType이 "NONE"일 때만 허용합니다.
+    // 즉, 인증 없이 호출 가능한 URL에만 적용됩니다.
+    "Condition": {
+      "StringEquals": {
+        "lambda:FunctionUrlAuthType": "NONE"
+      }
+    }
+  }]
+}
